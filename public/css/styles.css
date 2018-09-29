@@ -1,0 +1,15 @@
+body {
+  background-color: #588782;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #303030; }
+
+h1 {
+  display: grid;
+  grid: inherit; }
+
+.main {
+  display: grid;
+  grid: inherit; }
+
+.items {
+  background-color: #3e726b; }

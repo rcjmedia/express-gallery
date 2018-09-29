@@ -2,7 +2,7 @@ version: '3'
 services:
   this-app:
     image: rcjmedia/my-gallery:${IMAGE_VERSION}-local
-    command: ["./node_modules/.bin/nodemon", "server.js"]
+    command: ["./node_modules/.bin/nodemon", "server.js", "npm", "run", "dev"]
     container_name: my-gallery
     volumes:
       - ".:/app/:rw"
@@ -10,7 +10,9 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - "${EXPRESS_HOST_PORT}:${EXPRESS_CONTAINER_PORT}"
+      - "${EXPRESS_HOST_PORT}:${EXPRESS_CONTAINER_PORT}" 
+		  - "3000:3000"
+      - "3001:3001"
     networks:
       - this-app-network
   db: 
