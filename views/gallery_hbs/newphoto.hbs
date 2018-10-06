@@ -1,0 +1,20 @@
+<h1 id="normal_header">add to gallery</h1>
+<div id="messages_form">{{message}}</div>
+<form action="/gallery" enctype="application/x-www-form-urlencoded" method="POST">
+  <h1 class="header_input">title:
+    <br>
+    <input type="text" name="title" class="simple_line" value="{{photo.title}}">
+  </h1>
+  <h1 class="header_input">link:
+    <br>
+    <input type="url" name="link" class="simple_line" value="{{photo.url}}">
+  </h1>
+  <h1 class="header_input">description:
+    <br>
+    <textarea name="description" id="description">{{photo.description}}</textarea>
+  </h1>
+  <input type="submit" value="post" id="post_button">
+  <div id="back">
+    <a href="/gallery" id="back_button"> back </a>
+  </div>
+</form>

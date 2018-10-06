@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:latest",
     "seed": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex seed:run",
-    "start": "node server.js",
-    "dev": "nodemon app.js & gulp"
+    "flushdb": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:rollback ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex migrate:latest ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=5432 npx knex seed:run",
+    "dev": "npx nodemon server.js & npx gulp"
   },
   "repository": {
     "type": "git",
@@ -21,15 +21,26 @@
   },
   "homepage": "https://github.com/rcjmedia/my-gallery#readme",
   "dependencies": {
+    "bcrypt": "^3.0.1",
     "body-parser": "^1.18.3",
+    "bookshelf": "^0.13.3",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^3.4.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "flash": "^1.1.0",
+    "gulp-cli": "^2.0.1",
+    "gyp": "^0.5.0",
     "knex": "^0.15.2",
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.4.3",
+    "redis": "^2.8.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {

@@ -1,0 +1,38 @@
+<div id="sidebar">
+  <div id="back">
+    <a href="/gallery" id="id_back"> back </a>
+  </div>
+  {{#if username}}
+  <div id="edit_container">
+    <form action="/gallery/{{photo.attributes.content_id}}/edit" method="POST" enctype="application/x-www-form-urlencoded">
+      <input type="hidden" name="_method" value="GET">
+      <input type="submit" value="edit" id="edit_button">
+    </form>
+  </div>
+  <div id="delete_container">
+    <form action="/gallery/{{photo.attributes.content_id}}" method="POST" enctype="application/x-www-form-urlencoded">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete" id="delete_button">
+    </form>
+  </div>
+  <div id="logout">
+    <a href="/logout" id="logout_button">logout</a>
+  </div>
+  {{/if}}
+  <br>
+  <div id="messages">{{message}}</div>
+</div>
+<div id="header_container">
+  <h1 id="photo_header">{{photo.attributes.title}}</h1>
+</div>
+<div id="photo_content">
+  <a href="/users/{{photo.attributes.author}}">
+    <div id="author">@{{photo.attributes.author}}</div>
+  </a>
+</div>
+<div id="desc_content">
+  <div id="description">{{photo.attributes.description}}</div>
+</div>
+<div id="photo">
+  <img src="{{photo.attributes.url}}" alt="image" id="id_photo">
+</div>

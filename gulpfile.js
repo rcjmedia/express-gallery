@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const scss = require('gulp-sass');
 const browserSync = require('browser-sync');
-const PORT = process.env.EXPRESS_CONTAINER_PORT || 9090;
+const PORT = process.env.EXPRESS_CONTAINER_PORT || 9091;
 
 
 browserSync.init({
